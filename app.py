@@ -4,7 +4,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
+    if 'logged?' in session:
+        return render_template('home.html')
+
     return render_template('login.html')
+
 
 @app.route('/login/', methods=['POST'])
 def login():
@@ -18,6 +22,7 @@ def login():
     session['logged?'] = True
 
     return render_template('home.html')
+
 
 app.secret_key = 'jff6sdrg76gduoiwenjr'
 
