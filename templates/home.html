@@ -3,5 +3,6 @@
 {% block title %}Home Page{% endblock title %}
 
 {% block main %}
-<h1>Welcome, {{ session.get('username').title() }}!</h1>
+<h1>Welcome, {{ session.get('username').title() }}!</h1> <br>
+<a href="{{ url_for('logout') }}">Logout</a>
 {% endblock main %}

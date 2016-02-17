@@ -4,7 +4,11 @@
 
 {% block main %}
 {% if errors %}
-<h3>{{ errors }}</h3>
+    <h3>{{ errors }}</h3>
+{% endif %}
+
+{% if success %}
+    <h3>You have successfully logged out!</h3>
 {% endif %}
 
 <form action="{{ url_for('login') }}", method="POST">

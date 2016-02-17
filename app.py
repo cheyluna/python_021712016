@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, redirect, url_for
 app = Flask(__name__)
 
 
@@ -22,6 +22,13 @@ def login():
     session['logged?'] = True
 
     return render_template('home.html')
+
+
+@app.route('/logout/')
+def logout():
+    session.clear()
+
+    return redirect(url_for('home'))
 
 
 app.secret_key = 'jff6sdrg76gduoiwenjr'
