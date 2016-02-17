@@ -3,6 +3,10 @@
 {% block title %}Login Page{% endblock title %}
 
 {% block main %}
+{% if errors %}
+<h3>{{ errors }}</h3>
+{% endif %}
+
 <form action="{{ url_for('login') }}", method="POST">
     <h1>Login</h1>
     Username: <input type="text" name="username"> <br>

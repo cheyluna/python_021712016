@@ -8,8 +8,14 @@ def home():
 
 @app.route('/login/', methods=['POST'])
 def login():
+    if not request.form['username'] or not request.form['password']:
+        errors = 'Invalid username or password'
+
+        return render_template('login.html', errors=errors)
+
     session['username'] = request.form['username']
     session['password'] = request.form['password']
+    session['logged?'] = True
 
     return render_template('home.html')
 
