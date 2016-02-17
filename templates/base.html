@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>{% block title %}{% endblock title %}</title>
-    <style src="{{ url_for('static', filename='css/bootstrap.css') }}"></style>
-    <style src="{{ url_for('static', filename='css/bootstrap.min.css') }}"></style>
+    <style rel="stylesheet" type="text/css" src="{{ url_for('static', filename='css/bootstrap.css') }}"></style>
+    <style rel="stylesheet" type="text/css" src="{{ url_for('static', filename='css/bootstrap.min.css') }}"></style>
 </head>
 <body>
     {% block main %}{% endblock main %}
